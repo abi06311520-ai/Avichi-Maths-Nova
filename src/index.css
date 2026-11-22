@@ -3,3 +3,6 @@ html, body, #root {
   background-color: #EEF2F6 !important;
   color: #0F172A !important;
 }
+select, option, input, textarea {
+  color: #0F172A !important;
+}
