@@ -1552,6 +1552,12 @@ function buildInstantMathStepLesson(
       `Now in step three, we divide the intermediate product ${Number(n1) * Number(n2)} by ${n3} and apply the boundary conditions of the problem. Pay close attention to positive and negative signs during simplification so no arithmetic error occurs. This isolates the exact numerical value of our unknown variable.`,
       `Finally, we verify our computed values ${n1} and ${n2} by substituting them back into the original equation. Both left-hand and right-hand sides balance identically, confirming our solution is 100 percent accurate for the Tamil Nadu HSC 5-mark board exam.`
     ],
+    ta: [
+      `Let us examine the given problem carefully: ${activeSumTextEn}. Identify the key numerical coefficients ${n1}, ${n2}, and ${n3} directly from the expression. From Chapter ${matchedChapter.number} ${matchedChapter.title}, we select the governing formula ${matchedTopic.keyFormulas[0]} to structure our solution cleanly.`,
+      `In step two, we substitute the exact numbers ${n1} and ${n2} into the formula ${matchedTopic.keyFormulas[0]}. Combining ${n1} and ${n2} produces a sum of ${Number(n1) + Number(n2)} and a product of ${Number(n1) * Number(n2)}. Watch the live visual board on the right as each numerical term transforms step by step.`,
+      `Now in step three, we divide the intermediate product ${Number(n1) * Number(n2)} by ${n3} and apply the boundary conditions of the problem. Pay close attention to positive and negative signs during simplification so no arithmetic error occurs. This isolates the exact numerical value of our unknown variable.`,
+      `Finally, we verify our computed values ${n1} and ${n2} by substituting them back into the original equation. Both left-hand and right-hand sides balance identically, confirming our solution is 100 percent accurate for the Tamil Nadu HSC 5-mark board exam.`
+    ],
     hi: [
       `आइए दिए गए प्रश्न को ध्यान से देखें: ${activeSumTextEn}। समीकरण से मुख्य संख्यात्मक गुणांक ${n1}, ${n2} और ${n3} की पहचान करें। अध्याय ${matchedChapter.number} ${matchedChapter.title} से हम मुख्य सूत्र ${matchedTopic.keyFormulas[0]} का चयन करते हैं ताकि हल बिल्कुल सटीक हो।`,
       `दूसरे चरण में हम संख्या ${n1} और ${n2} को सीधे सूत्र ${matchedTopic.keyFormulas[0]} में रखते हैं। ${n1} और ${n2} को जोड़ने पर ${Number(n1) + Number(n2)} और गुणा करने पर ${Number(n1) * Number(n2)} प्राप्त होता है। दाईं ओर के बोर्ड पर प्रत्येक संख्या का चरणबद्ध परिवर्तन देखें।`,
