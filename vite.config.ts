@@ -29,7 +29,7 @@ export default defineConfig({
                 return res.end(JSON.stringify({ translated: text || '' }));
               }
               const r = await fetch('https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=' + encodeURIComponent(targetLang) + '&dt=t&q=' + encodeURIComponent(text));
-              const d = await r.json();
+              const d: any = await r.json();
               const translated = Array.isArray(d?.[0]) ? d[0].map((s: any) => s?.[0] || '').join('') : text;
               res.setHeader('Content-Type', 'application/json');
               res.end(JSON.stringify({ translated: translated || text }));

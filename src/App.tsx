@@ -1291,7 +1291,7 @@ async function fetchWithTimeout(
   timeoutMs = 4500
 ): Promise<Response> {
   const controller = new AbortController();
-  const timerId = window.setTimeout(() => controller.abort(), timeoutMs);
+  const timerId = globalThis.setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch(url, {
       ...options,
@@ -1927,7 +1927,7 @@ const AiMathsStudio: React.FC<{
 
       if (!('speechSynthesis' in window)) {
         fallbackTimingRef.current = { startMs: performance.now(), durationMs: minExpectedDurationMs };
-        fallbackTimerRef.current = window.setTimeout(() => {
+        fallbackTimerRef.current = globalThis.setTimeout(() => {
           if (playbackSessionIdRef.current === sessionId) {
             audioFinishedRef.current = true;
             fallbackTimingRef.current = null;
@@ -1989,7 +1989,7 @@ const AiMathsStudio: React.FC<{
           setSpokenCharRatio(1);
           const elapsed = performance.now() - (fallbackTimingRef.current?.startMs || performance.now());
           const remaining = Math.max(250, minExpectedDurationMs - elapsed);
-          fallbackTimerRef.current = window.setTimeout(() => {
+          fallbackTimerRef.current = globalThis.setTimeout(() => {
             if (playbackSessionIdRef.current === sessionId) {
               audioFinishedRef.current = true;
               fallbackTimingRef.current = null;
@@ -2027,13 +2027,13 @@ const AiMathsStudio: React.FC<{
           chunkSettled = true;
           window.clearTimeout(chunkSafetyTimer);
           if (playbackSessionIdRef.current === sessionId) {
-            window.setTimeout(() => speakIndex(idx + 1), 100);
+            globalThis.setTimeout(() => speakIndex(idx + 1), 100);
           }
         };
 
         const chunkWords = chunkText.split(/\s+/).filter(Boolean).length;
         const maxChunkMs = Math.max(5000, chunkWords * 650);
-        const chunkSafetyTimer = window.setTimeout(advanceChunk, maxChunkMs);
+        const chunkSafetyTimer = globalThis.setTimeout(advanceChunk, maxChunkMs);
 
         utterance.onstart = () => {
           if (playbackSessionIdRef.current === sessionId) {
@@ -2055,7 +2055,7 @@ const AiMathsStudio: React.FC<{
       const startChain = () => {
         if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
           window.speechSynthesis.cancel();
-          window.setTimeout(() => speakIndex(0), 140);
+          globalThis.setTimeout(() => speakIndex(0), 140);
         } else {
           speakIndex(0);
         }
@@ -2065,7 +2065,7 @@ const AiMathsStudio: React.FC<{
         startChain();
       } else {
         window.speechSynthesis.addEventListener('voiceschanged', () => startChain(), { once: true });
-        window.setTimeout(startChain, 220);
+        globalThis.setTimeout(startChain, 220);
       }
     },
     [isMuted, isTamilMode, langConfig.bcp47, selectBoldIndianMaleVoice]
