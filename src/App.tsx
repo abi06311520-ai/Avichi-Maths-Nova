@@ -2717,7 +2717,7 @@ CRITICAL RULES:
         ctx.lineWidth = 1.5;
         ctx.stroke();
 
-        ctx.fillStyle = '#a5b4fc';
+        ctx.fillStyle = '#1E293B';
         ctx.font = `600 ${isCompact ? 12.5 : 14.5}px monospace`;
         const eqTrimmed =
           currentSlide.equation.length > 48
@@ -2836,7 +2836,7 @@ CRITICAL RULES:
         } else if (visualData.visualMode === 'calculus_curve') {
           // Draw curve + moving tangent slope line with exact coefficients
           const ax = boardRadius * 0.85;
-          ctx.strokeStyle = '#64748b';
+          ctx.strokeStyle = '#1E293B';
           ctx.lineWidth = 1.5;
           ctx.beginPath();
           ctx.moveTo(-ax, 0);
@@ -2871,7 +2871,7 @@ CRITICAL RULES:
         } else if (visualData.visualMode === 'complex_argand') {
           // Argand plane vector z = x + iy
           const r = boardRadius * 0.72;
-          ctx.strokeStyle = '#64748b';
+          ctx.strokeStyle = '#1E293B';
           ctx.lineWidth = 1.5;
           ctx.beginPath();
           ctx.moveTo(-r, 0);
@@ -2939,11 +2939,11 @@ CRITICAL RULES:
       <div className="bg-white dark:bg-[#F8FAFC] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm">
         <div className="flex flex-col xl:flex-row gap-4 items-stretch xl:items-end">
           <div className="flex-1">
-            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-800 mb-1.5">
+            <label className="block text-xs font-semibold uppercase tracking-wider text-slate-800 dark:text-slate-800 mb-1.5">
               {ui.topicLabel}
             </label>
             <div className="relative">
-              <Sparkles className="w-4 h-4 text-indigo-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+              <Sparkles className="w-4 h-4 text-indigo-900 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
                 type="text"
                 value={promptTopic}
@@ -2960,7 +2960,7 @@ CRITICAL RULES:
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-800 mb-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-800 dark:text-slate-800 mb-1.5">
                 {isTamilMode ? 'நிலை' : 'Level'}
               </label>
               <select
@@ -2975,7 +2975,7 @@ CRITICAL RULES:
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-800 mb-1.5">
+              <label className="block text-xs font-semibold uppercase tracking-wider text-slate-800 dark:text-slate-800 mb-1.5">
                 {isTamilMode ? 'பலகை வடிவம்' : 'Board Style'}
               </label>
               <select
@@ -3011,7 +3011,7 @@ CRITICAL RULES:
         </div>
 
         <div className="mt-4 flex flex-wrap items-center gap-2">
-          <span className="text-xs text-slate-500 dark:text-slate-800 font-medium">
+          <span className="text-xs text-slate-800 dark:text-slate-800 font-medium">
             {isTamilMode ? '12-ஆம் வகுப்பு கணிதக் கணக்குகள்:' : 'Quick Class 12 Maths Sums:'}
           </span>
           {(isTamilMode
@@ -3143,7 +3143,7 @@ CRITICAL RULES:
                 type="button"
                 onClick={() => handleSelectSlide(Math.max(0, currentSlideIdx - 1))}
                 disabled={!lesson || currentSlideIdx === 0}
-                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-40 text-white transition-colors cursor-pointer"
+                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-40 text-slate-900 transition-colors cursor-pointer"
                 title={isTamilMode ? 'முந்தைய பகுதி' : 'Previous Division'}
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -3155,7 +3155,7 @@ CRITICAL RULES:
                   handleSelectSlide(Math.min((lesson?.slides.length || 1) - 1, currentSlideIdx + 1))
                 }
                 disabled={!lesson || currentSlideIdx === (lesson?.slides.length || 1) - 1}
-                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-40 text-white transition-colors cursor-pointer"
+                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-40 text-slate-900 transition-colors cursor-pointer"
                 title={isTamilMode ? 'அடுத்த பகுதி' : 'Next Division'}
               >
                 <ChevronRight className="w-4 h-4" />
@@ -3165,7 +3165,7 @@ CRITICAL RULES:
                 type="button"
                 onClick={() => handleSelectSlide(0)}
                 disabled={!lesson}
-                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-40 text-white transition-colors cursor-pointer"
+                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-40 text-slate-900 transition-colors cursor-pointer"
                 title={isTamilMode ? 'மீண்டும் தொடங்கு' : 'Restart Lesson'}
               >
                 <RotateCcw className="w-4 h-4" />
@@ -3196,7 +3196,7 @@ CRITICAL RULES:
                     playSlideAudio(currentSlideIdx, lesson.slides[currentSlideIdx]?.narration);
                   }
                 }}
-                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 text-white transition-colors cursor-pointer"
+                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 text-slate-900 transition-colors cursor-pointer"
                 title={isMuted ? 'Unmute Bold Male Indian Voice' : 'Mute Voice'}
               >
                 {isMuted ? (
@@ -3219,7 +3219,7 @@ CRITICAL RULES:
               </div>
               <div>
                 <h3 className="font-bold text-slate-900 dark:text-slate-900">{lesson.lessonTitle}</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-800">
+                <p className="text-xs text-slate-800 dark:text-slate-800">
                   {isTamilMode ? 'படிப்படியான கணிதத் தீர்வு (4 பகுதிகள்)' : 'Step-by-Step Worked Solution (4 Divisions)'}
                 </p>
               </div>
@@ -3261,7 +3261,7 @@ CRITICAL RULES:
                   <h3 className="font-bold text-slate-900 dark:text-slate-900">
                     {isTamilMode ? 'பாடப் புரிதல் வினா' : 'Step-by-Step Formula Check'}
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-800">
+                  <p className="text-xs text-slate-800 dark:text-slate-800">
                     {isTamilMode ? 'உங்கள் கணித அறிவை உடனடியாகச் சோதிக்கவும்' : 'Verify the key formula used in this sum'}
                   </p>
                 </div>
@@ -3500,7 +3500,7 @@ function MathNovaStudioContent() {
 
             <div className="hidden xl:flex items-center gap-2.5">
               <div className="text-right">
-                <p className="text-[10px] font-medium text-slate-500 dark:text-slate-800">{ui.syllabusMastery}</p>
+                <p className="text-[10px] font-medium text-slate-800 dark:text-slate-800">{ui.syllabusMastery}</p>
                 <p className="text-xs font-bold text-indigo-600 dark:text-indigo-950">
                   {completedCount}/{totalTopicsCount} ({masteryPercentage}%)
                 </p>
@@ -3519,7 +3519,7 @@ function MathNovaStudioContent() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-900">{ui.studioHeader}</h1>
-                <p className="text-sm text-slate-500 dark:text-slate-800">{ui.studioSub}</p>
+                <p className="text-sm text-slate-800 dark:text-slate-800">{ui.studioSub}</p>
               </div>
             </div>
 
@@ -3532,7 +3532,7 @@ function MathNovaStudioContent() {
             <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
               <div>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-900">{ui.syllabusHeader}</h1>
-                <p className="text-sm text-slate-500 dark:text-slate-800">{ui.syllabusSub}</p>
+                <p className="text-sm text-slate-800 dark:text-slate-800">{ui.syllabusSub}</p>
               </div>
 
               <div className="flex flex-wrap items-center gap-2 bg-white dark:bg-[#F8FAFC] p-1.5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
@@ -3571,7 +3571,7 @@ function MathNovaStudioContent() {
                         className={`text-[10px] px-2 py-0.5 rounded-full ${
                           active
                             ? 'bg-indigo-500 text-slate-900'
-                            : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-white'
+                            : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-900'
                         }`}
                       >
                         {v.badge}
@@ -3721,7 +3721,7 @@ function MathNovaStudioContent() {
                           </div>
 
                           <div className="pt-2.5 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between">
-                            <span className="text-[11px] text-slate-500 dark:text-slate-800">
+                            <span className="text-[11px] text-slate-800 dark:text-slate-800">
                               {isTamilMode ? `சமச்சீர் கல்வி ${topic.code}` : `Samacheer Kalvi ${topic.code}`}
                             </span>
                             <button
@@ -3755,7 +3755,7 @@ function MathNovaStudioContent() {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-900">{ui.practiceHeader}</h1>
-                  <p className="text-sm text-slate-500 dark:text-slate-800">{ui.practiceSub}</p>
+                  <p className="text-sm text-slate-800 dark:text-slate-800">{ui.practiceSub}</p>
                 </div>
 
                 <select
@@ -3861,7 +3861,7 @@ function MathNovaStudioContent() {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-900 dark:text-slate-900">{ui.askTutorTitle}</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-800">
+                    <p className="text-xs text-slate-800 dark:text-slate-800">
                       {isTamilMode ? 'தமிழில் படிப்படியான கணக்குத் தீர்வு' : 'Step-by-Step Class 12 Maths Solver'}
                     </p>
                   </div>
@@ -3906,7 +3906,7 @@ function MathNovaStudioContent() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-900">{ui.pastHeader}</h1>
-                <p className="text-sm text-slate-500 dark:text-slate-800">{ui.pastSub}</p>
+                <p className="text-sm text-slate-800 dark:text-slate-800">{ui.pastSub}</p>
               </div>
 
               <div className="relative w-full sm:w-72">
@@ -3935,7 +3935,7 @@ function MathNovaStudioContent() {
                         <span className="px-2.5 py-1 rounded-lg bg-indigo-50 dark:bg-[#EEF2F6] text-indigo-600 dark:text-indigo-950 text-xs font-bold">
                           {item.year}
                         </span>
-                        <span className="text-xs font-medium text-slate-500 dark:text-slate-800">
+                        <span className="text-xs font-medium text-slate-800 dark:text-slate-800">
                           {isTamilMode ? item.tamilPaper : item.paper}
                         </span>
                         <span className="text-xs text-slate-800">•</span>
@@ -3961,7 +3961,7 @@ function MathNovaStudioContent() {
                             [item.id]: !prev[item.id]
                           }))
                         }
-                        className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#E2E8F0] dark:hover:bg-slate-700 text-xs font-semibold text-white dark:text-slate-800 transition-colors cursor-pointer"
+                        className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#E2E8F0] dark:hover:bg-slate-700 text-xs font-semibold text-slate-900 dark:text-slate-800 transition-colors cursor-pointer"
                       >
                         {isOpen ? ui.hideSolution : ui.revealSolution}
                       </button>
