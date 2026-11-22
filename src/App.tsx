@@ -2994,7 +2994,7 @@ CRITICAL RULES:
             type="button"
             onClick={handleGenerateLesson}
             disabled={isGenerating || !promptTopic.trim()}
-            className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-semibold rounded-xl text-sm shadow-md shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="px-6 py-2.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-95 text-white font-semibold rounded-xl text-sm shadow-md shadow-indigo-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             {isGenerating ? (
               <>
@@ -3133,7 +3133,7 @@ CRITICAL RULES:
                 type="button"
                 onClick={togglePlayPause}
                 disabled={!lesson}
-                className="p-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 text-white transition-colors cursor-pointer"
+                className="p-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 disabled:opacity-95 text-white transition-colors cursor-pointer"
                 title={isPlaying ? (isTamilMode ? 'இடைநிறுத்து' : 'Pause') : (isTamilMode ? 'இயக்கு' : 'Play')}
               >
                 {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
@@ -3143,7 +3143,7 @@ CRITICAL RULES:
                 type="button"
                 onClick={() => handleSelectSlide(Math.max(0, currentSlideIdx - 1))}
                 disabled={!lesson || currentSlideIdx === 0}
-                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-40 text-slate-900 transition-colors cursor-pointer"
+                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-95 text-white transition-colors cursor-pointer"
                 title={isTamilMode ? 'முந்தைய பகுதி' : 'Previous Division'}
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -3155,7 +3155,7 @@ CRITICAL RULES:
                   handleSelectSlide(Math.min((lesson?.slides.length || 1) - 1, currentSlideIdx + 1))
                 }
                 disabled={!lesson || currentSlideIdx === (lesson?.slides.length || 1) - 1}
-                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-40 text-slate-900 transition-colors cursor-pointer"
+                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-95 text-white transition-colors cursor-pointer"
                 title={isTamilMode ? 'அடுத்த பகுதி' : 'Next Division'}
               >
                 <ChevronRight className="w-4 h-4" />
@@ -3165,7 +3165,7 @@ CRITICAL RULES:
                 type="button"
                 onClick={() => handleSelectSlide(0)}
                 disabled={!lesson}
-                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-40 text-slate-900 transition-colors cursor-pointer"
+                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 disabled:opacity-95 text-white transition-colors cursor-pointer"
                 title={isTamilMode ? 'மீண்டும் தொடங்கு' : 'Restart Lesson'}
               >
                 <RotateCcw className="w-4 h-4" />
@@ -3196,7 +3196,7 @@ CRITICAL RULES:
                     playSlideAudio(currentSlideIdx, lesson.slides[currentSlideIdx]?.narration);
                   }
                 }}
-                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 text-slate-900 transition-colors cursor-pointer"
+                className="p-2 rounded-xl bg-[#E2E8F0] hover:bg-slate-700 text-white transition-colors cursor-pointer"
                 title={isMuted ? 'Unmute Bold Male Indian Voice' : 'Mute Voice'}
               >
                 {isMuted ? (
@@ -3242,7 +3242,7 @@ CRITICAL RULES:
                     <span className="truncate">
                       {isTamilMode ? `பகுதி ${idx + 1}. ${s.title}` : `Div ${idx + 1}. ${s.title}`}
                     </span>
-                    <code className="text-xs px-2 py-0.5 rounded bg-slate-200/80 dark:bg-slate-700 text-indigo-700 dark:text-indigo-950 shrink-0">
+                    <code className="text-xs px-2 py-0.5 rounded bg-slate-200/80 dark:bg-slate-700 text-white dark:text-indigo-950 shrink-0">
                       {s.equation}
                     </code>
                   </div>
@@ -3571,7 +3571,7 @@ function MathNovaStudioContent() {
                         className={`text-[10px] px-2 py-0.5 rounded-full ${
                           active
                             ? 'bg-indigo-500 text-slate-900'
-                            : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-900'
+                            : 'bg-slate-200 dark:bg-slate-700 text-white dark:text-slate-900'
                         }`}
                       >
                         {v.badge}
@@ -3600,7 +3600,7 @@ function MathNovaStudioContent() {
                               ? `அத்தியாயம் ${chapter.number}: ${chapter.tamilTitle}`
                               : `Chapter ${chapter.number}: ${chapter.title}`}
                           </h2>
-                          <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-violet-50 dark:bg-violet-950/70 text-violet-600 dark:text-indigo-950 border border-violet-200/70 dark:border-violet-800">
+                          <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-violet-50 dark:bg-violet-950/70 text-violet-600 dark:text-white border border-violet-200/70 dark:border-violet-800">
                             {isTamilMode
                               ? `${chapter.tamilVolume} • ${chapter.topics.length} தலைப்புகள்`
                               : `${chapter.volume} • ${chapter.topics.length} Topics`}
@@ -3699,7 +3699,7 @@ function MathNovaStudioContent() {
                                           : `Chapter ${chapter.number} (${sub}): ${topic.sampleSumEn}`
                                       )
                                     }
-                                    className="px-2 py-0.5 rounded bg-indigo-50 hover:bg-indigo-600 dark:bg-[#EEF2F6] dark:hover:bg-indigo-600 text-[10px] text-indigo-600 hover:text-white dark:text-indigo-950 dark:hover:text-slate-900 font-semibold transition-colors flex items-center gap-1 shrink-0 cursor-pointer"
+                                    className="px-2 py-0.5 rounded bg-indigo-50 hover:bg-indigo-600 dark:bg-[#EEF2F6] dark:hover:bg-indigo-600 text-[10px] text-indigo-600 hover:text-white dark:text-white dark:hover:text-slate-900 font-semibold transition-colors flex items-center gap-1 shrink-0 cursor-pointer"
                                   >
                                     <Play className="w-2.5 h-2.5" />
                                     <span>{ui.videoBtn}</span>
@@ -3879,7 +3879,7 @@ function MathNovaStudioContent() {
                   type="button"
                   onClick={handleAskTutor}
                   disabled={isTutorThinking || !tutorQuestion.trim()}
-                  className="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 text-white font-semibold rounded-xl text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-95 text-white font-semibold rounded-xl text-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
                 >
                   {isTutorThinking ? (
                     <>
@@ -3961,7 +3961,7 @@ function MathNovaStudioContent() {
                             [item.id]: !prev[item.id]
                           }))
                         }
-                        className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#E2E8F0] dark:hover:bg-slate-700 text-xs font-semibold text-slate-900 dark:text-slate-800 transition-colors cursor-pointer"
+                        className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#E2E8F0] dark:hover:bg-slate-700 text-xs font-semibold text-white dark:text-slate-800 transition-colors cursor-pointer"
                       >
                         {isOpen ? ui.hideSolution : ui.revealSolution}
                       </button>

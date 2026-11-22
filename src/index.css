@@ -6,3 +6,11 @@ html, body, #root {
 select, option, input, textarea {
   color: #0F172A !important;
 }
+[class*="bg-purple-"], [class*="bg-indigo-9"], [class*="bg-indigo-8"], [class*="bg-indigo-7"], [class*="bg-indigo-6"] {
+  color: #FFFFFF !important;
+}
+code, pre {
+  background-color: #E0E7FF !important;
+  color: #0F172A !important;
+  border: 1px solid #C7D2FE !important;
+}
